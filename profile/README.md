@@ -1,4 +1,5 @@
 # Azure Framework
+![AzureFramework](https://github.com/user-attachments/assets/1d15b542-1cf1-4601-8720-768bed51c302)
 
 **vMenu-Driven • Lightweight • Modular**
 
@@ -18,11 +19,7 @@ Welcome to **Azure Framework**, a minimalist FiveM server framework built around
 
 ## 🚀 Getting Started
 
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/Azure-Framework/Azure-Framework.git
-   cd Azure-Framework
-   ```
+1. **Downloaded The Lastest Release**
 2. **Install dependencies**
    - Ensure you have `mysql-async` or `oxmysql` installed in your FiveM server.
    - Configure `config.lua` with your Discord Bot token, Guild ID, and MySQL details.
@@ -50,21 +47,29 @@ To enable or disable modules, simply comment/uncomment in your `server.cfg` and 
 Edit the following in `config.lua`:
 
 ```lua
-Config = {
-  Discord = {
+Config = {}
+
+Config.AdminRoleId = "YOUR_DISCORD_ADMIN_ROLE"
+
+-- Set to true to enable park-anywhere functionality (Shift + F to park/unpark vehicles)
+Config.Parking = true
+
+-- Set to true to enable departments and department paychecks
+Config.Departments = true
+
+-- How often to run distributePaychecks (in milliseconds)
+Config.paycheckInterval = 3600000  -- 1 hour
+
+-- Discord bot configuration
+Config.Discord = {
+    -- Your bot’s token (keep this secret!)
     BotToken = "YOUR_BOT_TOKEN",
-    GuildId  = "YOUR_GUILD_ID",
-    WebhookURL = "YOUR_LOG_WEBHOOK_URL",
-  },
-  MySQL = {
-    Provider = "mysql-async",     -- or oxmysql
-    Host     = "127.0.0.1",
-    Database = "fivem_econ",
-    Username = "root",
-    Password = "password",
-  },
-  AdminRoleId = "DISCORD_ROLE_ID_FOR_ADMINS",
-  Debug      = false,
+    
+    -- The ID of the guild (server) you want to query
+    GuildId = "YOUR_DISCORD_GUILD_ID",
+    
+    -- Discord webhook URL for logging (fill with your webhook endpoint)
+    WebhookURL = "YOUR_DISCORD_WEBHOOK_URL"
 }
 ```
 
