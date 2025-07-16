@@ -59,16 +59,17 @@
    - Add `start oxmysql` and `start ox_lib` to `server.cfg`
 
 3. **Add Azure Framework**  
-   Place `Az-Framework`, `Az-Banking`, and `Az-Admin` into `resources/[framework]/`
+   Place `Az-Banking`, and `Az-Admin` into `resources/[framework]/`
+      Place `Az-Framework` into `resources`
 
-4. **Update your server.cfg**  
+5. **Update your server.cfg**  
    Ensure this load order:
    - start oxmysql  
    - start ox_lib  
    - start Az-Framework  
    - start [framework]
 
-5. **Launch your server**  
+6. **Launch your server**  
    Tables will be auto-created. Test your HUD, economy, and character system.
 
 </details>
