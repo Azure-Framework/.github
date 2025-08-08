@@ -27,8 +27,8 @@
 <details>
 <summary>📢 Patch Notes (June 2025)</summary>
 
-- 🔒 **Discord Token & Webhook Config Removed**  
-  You no longer need to edit config.lua for tokens—handled securely inside `server.lua`.
+- 🔒 **Secure Token Config**  
+  All sensitive info like Discord bot tokens and webhooks are now configured in `server.cfg`.
 
 - 💠 **Character Menu (ox_lib)**  
   Now using ox_lib’s sleek menu system to manage character switching.
@@ -56,21 +56,35 @@
 
 2. **Install Dependencies**  
    - Drop `oxmysql` and `ox_lib` into `resources/`
-   - Add `start oxmysql` and `start ox_lib` to `server.cfg`
+   - Add `start oxmysql` and `start ox_lib` to your `server.cfg`
 
 3. **Add Azure Framework**  
-   Place `Az-Banking`, and `Az-Admin` into `resources/[framework]/`
-      Place `Az-Framework` into `resources`
+   - Place `Az-Framework` into `resources/`  
+   - Place `Az-Banking`, `Az-Admin`, etc., into `resources/[framework]/`
 
-5. **Update your server.cfg**  
-   Ensure this load order:
-   - start oxmysql  
-   - start ox_lib  
-   - start Az-Framework  
-   - start [framework]
+4. **Update `server.cfg`**
 
-6. **Launch your server**  
-   Tables will be auto-created. Test your HUD, economy, and character system.
+   Add the following in this order:
+```
+start oxmysql
+start ox_lib
+start Az-Framework
+start [framework]
+```
+
+Then, securely set your Discord credentials:
+
+```
+set DISCORD_BOT_TOKEN "your_bot_token"
+set DISCORD_WEBHOOK_URL "your_webhook_url"
+set DISCORD_GUILD_ID "your_guild_id"
+```
+
+
+
+
+5. **Launch your server**  
+All tables will auto-generate. Your HUD, economy, and admin system should be ready to go.
 
 </details>
 
@@ -101,9 +115,13 @@
 
 ## 🧰 Configuration
 
-Configuration is done via:
-- `server.cfg` for startup order & MySQL connection string
-- `server.lua` for Discord token, webhook, and role IDs (not stored in config anymore)
+All sensitive data is handled securely via `server.cfg`.
+
+You should:
+- Add `DISCORD_BOT_TOKEN`, `DISCORD_WEBHOOK_URL`, and `DISCORD_GUILD_ID` into `server.cfg`
+- Never hardcode Discord tokens or webhooks into your Lua files
+
+Other configuration (like module toggles or default values) is done within each module’s `config.lua` where applicable.
 
 ---
 
@@ -137,7 +155,7 @@ Azure Framework was built for simplicity and transparency:
 
 We welcome PRs and feedback! Submit improvements, report bugs, or suggest new modules.
 
-- GitHub: https://github.com/Azure-Framework
+- GitHub: https://github.com/Azure-Framework  
 - Community: https://discord.gg/tBg2U6CTHE
 
 ---
