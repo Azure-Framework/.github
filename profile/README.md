@@ -1,163 +1,192 @@
-# Azure Framework – Lightweight Modular System for vMenu Servers
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:007BFF,100:FFFFFF&height=190&section=header&text=AZURE%20FRAMEWORK&fontSize=62&fontColor=FFFFFF&fontAlignY=35&animation=fadeIn&desc=THE%20MODULAR%20FIVEM%20ECOSYSTEM&descAlignY=60&descSize=18&descColor=EAF3FF" />
+</p>
 
-<div align="center">
+<p align="center">
+  <img src="https://imgimp.xyz/images/Stoic-2025-06-28_06-06-19-685f865b90047.png" width="140" height="140" />
+</p>
 
-<img src="https://imgimp.xyz/images/Stoic-2025-06-28_06-06-19-685f865b90047.png" width="200" height="200" />
+<h1 align="center">Azure Framework</h1>
 
-**vMenu‑Driven • MySQL‑Automatic • Discord‑Powered**
+<p align="center"><b>Lightweight • Modular • Discord-Powered • vMenu Optional</b></p>
 
-> A fast, modular FiveM framework built around Discord integration and vMenu compatibility.  
-> Skip the bloat. Only what your server actually needs.
+<p align="center">
+  <a href="https://github.com/Azure-Framework"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-OPEN-FFFFFF?style=for-the-badge&labelColor=007BFF" /></a>
+  <a href="https://azurewebsites.xyz/framework/"><img alt="Website" src="https://img.shields.io/badge/Website-OPEN-FFFFFF?style=for-the-badge&labelColor=007BFF" /></a>
+  <a href="https://azurewebsites.xyz/docs/guides/framework/guide.html"><img alt="Docs" src="https://img.shields.io/badge/Docs-OPEN-FFFFFF?style=for-the-badge&labelColor=007BFF" /></a>
+  <a href="https://discord.com/invite/tBg2U6CTHE"><img alt="Discord" src="https://img.shields.io/badge/Discord-JOIN-FFFFFF?style=for-the-badge&labelColor=007BFF" /></a>
+</p>
 
-</div>
+<p align="center">
+  <img alt="version" src="https://img.shields.io/badge/VERSION-v2.0.0-007BFF?style=for-the-badge&labelColor=FFFFFF" />
+  <img alt="fivem" src="https://img.shields.io/badge/FIVEM-READY-007BFF?style=for-the-badge&labelColor=FFFFFF" />
+</p>
+
+> **Yes — these sections can be auto-collapsed.**  
+> Remove the `open` attribute from `<details>` to have them collapsed by default.
 
 ---
 
-## 📚 Docs & Resources
-
-- **Homepage** → https://azurewebsites.xyz/framework  
-- **Setup Wizard** → https://azurewebsites.xyz/docs/guides/framework/guide.html  
-- **Full Documentation** → https://azurewebsites.xyz/docs/economy.html  
-- **Community Discord** → https://discord.gg/tBg2U6CTHE
-
----
-
-## 🔥 Recent Announcements
+## :rocket: AZURE FRAMEWORK
+> :sparkles: *One ecosystem. Three ways to run your server.*
 
 <details>
-<summary>📢 Patch Notes (June 2025)</summary>
+<summary><b>🧭 Modes (click to expand)</b></summary>
 
-- 🔒 **Secure Token Config**  
-  All sensitive info like Discord bot tokens and webhooks are now configured in `server.cfg`.
+### :white_check_mark: FULL FRAMEWORK (No vMenu)
+- :school_satchel: **Inventory** — usable items + clean UI  
+- :shopping_cart: **Shops** — configurable buy/sell  
+- :red_car: **Player Vehicles** — ownership + garages/parking  
+- :moneybag: **Economy + Banking** — accounts, money flow  
+- :bust_in_silhouette: **Character Systems** — modern experience + UI  
 
-- 💠 **Character Menu (ox_lib)**  
-  Now using ox_lib’s sleek menu system to manage character switching.
+### :white_check_mark: HYBRID (Framework + vMenu)
+- :zap: Keep vMenu for what you want  
+- :jigsaw: Add Azure modules as you grow  
+- :school_satchel: Inventory • :shopping_cart: Shops • :red_car: Owned Vehicles • :moneybag: Banking  
 
-- 🪙 **MySQL Full Automation**  
-  No more import.sql! All framework tables are generated on first run.
-
-- ⚙️ **Upcoming Exports**  
-  Two powerful new exports coming soon for even easier script integration.
-
-- 🧼 **Code Refinement & Bug Fixes**  
-  Lots of cleanup under the hood—expect smoother performance and fewer warnings.
+### :white_check_mark: vMenu MODE (Lightweight)
+- :joystick: vMenu-driven with Azure features layered in  
+- :shield: **Discord role integration** — perms + departments  
+- :technologist: **Admin tools/UI** — staff controls + reports  
+- :police_car: **MDT** • :chains: **Jailing** • :clapper: **Loading UI** + more  
 
 </details>
 
 ---
 
-## 🚀 Quick Start
+## ✅ What This Repo Provides (Az-Framework)
+- :moneybag: **Economy helpers** (cash/bank operations + client updates)  
+- :busts_in_silhouette: **Discord identity + permissions hooks**  
+- :briefcase: **Job helpers** (job reads + role logic)  
+- :car: **Vehicle parking helpers** (parked vehicle tracking exports)  
+- :sparkles: **Client helpers** (HUD refresh hooks)  
+
+---
 
 <details>
-<summary>🛠️ How to Install</summary>
+<summary><b>📦 Dependencies (click to expand)</b></summary>
 
-1. **Prepare a MySQL database**  
-   Note host, port, name, user, and password.
+### Required
+- **oxmysql**
+- **ox_lib**
+- **ox_target**
 
-2. **Install Dependencies**  
-   - Drop `oxmysql` and `ox_lib` into `resources/`
-   - Add `start oxmysql` and `start ox_lib` to your `server.cfg`
-
-3. **Add Azure Framework**  
-   - Place `Az-Framework` into `resources/`  
-   - Place `Az-Banking`, `Az-Admin`, etc., into `resources/[framework]/`
-
-4. **Update `server.cfg`**
-
-   Add the following in this order:
-```
-start oxmysql
-start ox_lib
-start Az-Framework
-start [framework]
-```
-
-Then, securely set your Discord credentials:
-
-```
-set DISCORD_BOT_TOKEN "your_bot_token"
-set DISCORD_WEBHOOK_URL "your_webhook_url"
-set DISCORD_GUILD_ID "your_guild_id"
-```
-
-
-
-
-5. **Launch your server**  
-All tables will auto-generate. Your HUD, economy, and admin system should be ready to go.
+### Optional (only if you use the feature)
+- **screenshot-basic**
+- **fivem-appearance**
+- **MugShotBase64**
+- **glitch-minigames**
 
 </details>
 
 ---
 
-## 🧩 Core Modules
+<details>
+<summary><b>🚀 Resource Start Order (click to expand)</b></summary>
 
-| Module         | Features                                                                 |
-|----------------|--------------------------------------------------------------------------|
-| Departments    | Jobs, paychecks, role-based logic, live HUD updates                      |
-| Banking        | Cash, bank, transfers, Discord webhook logs                              |
-| Admin Tools    | In-game admin menu powered by Discord roles                              |
-| Jail System    | Jailing support, timers, reasons, and Discord logging                    |
-| Player Stats   | Stamina, strength, driving, RP—persisted between sessions                |
-| Characters     | ox_lib character switcher + multi-character support                      |
-| Inventory (WIP)| Simple inventory base + ox_inventory support (early development)         |
+```cfg
+ensure oxmysql            # (NEEDED)
+ensure ox_lib             # (NEEDED)
+ensure ox_target          # (NEEDED)
 
----
+ensure screenshot-basic   # (IF YOU ARE USING)
+ensure fivem-appearance   # (IF YOU ARE USING)
+ensure MugShotBase64      # (IF YOU ARE USING)
+ensure glitch-minigames   # (IF YOU ARE USING)
 
-## 🧪 Usage Examples
+ensure Az-Framework       # (NEEDED)
+ensure Az-CharacterUI     # (IF YOU ARE USING)
 
-- Add money: `exports['Az-Framework']:addMoney(source, 500)`
-- Transfer to bank: `exports['Az-Framework']:depositMoney(source, 200)`
-- Jail a player: `exports['Az-Framework']:requestJail(src, targetId, 30, {'Theft'})`
-- Get departments: `exports['Az-Framework']:getDepartments(function(rows) ... end)`
+ensure [Framework]        # (ALL OTHER Az-* RESOURCES GO HERE)
+```
 
----
+### Recommended Folder Layout
+```text
+resources/
+  Az-Framework/
+  Az-CharacterUI/
+  [Framework]/
+    Az-Banking/
+    Az-Admin/
+    Az-Jailing/
+    Az-MDT/
+    Az-Loading/
+    Az-DMV/
+    ...etc
+```
 
-## 🧰 Configuration
-
-All sensitive data is handled securely via `server.cfg`.
-
-You should:
-- Add `DISCORD_BOT_TOKEN`, `DISCORD_WEBHOOK_URL`, and `DISCORD_GUILD_ID` into `server.cfg`
-- Never hardcode Discord tokens or webhooks into your Lua files
-
-Other configuration (like module toggles or default values) is done within each module’s `config.lua` where applicable.
-
----
-
-## 🧠 Philosophy
-
-Azure Framework was built for simplicity and transparency:
-
-- ✅ No bloat: you choose which modules to use
-- 🔐 Discord handles all permissions
-- 🛠️ Designed to work seamlessly with vMenu, ox_lib, and community scripts
-- 💾 MySQL auto-setup—no manual imports
+</details>
 
 ---
-
-## 📎 Screenshots
 
 <details>
-<summary>📸 Preview Gallery</summary>
+<summary><b>🧰 Exports (click to expand)</b></summary>
 
-![Dashboard Preview](upload://jGWM0S2UuMMTpRoLHxDwegzliCg.png)  
-![In‑Game HUD](upload://1rOzX7uVhRubXuHdyKpTYGopBv0.png)  
-![Departments List](upload://7P3qNuMSPJy6Gn4u9Q5k6VrXC7j.jpeg)  
-![Admin Panel](upload://dJz2W9OngIxImSL5bh91ZcVnOa2.jpeg)  
-![HUD Example](upload://yANYSsBWlTkIx4wVZKluxpgLtfBZ.jpeg)
+### :moneybag: Economy / Money
+```lua
+exports['Az-Framework']:addMoney(src, amount)
+exports['Az-Framework']:addMoney(amount)
+
+exports['Az-Framework']:deductMoney(src, amount)
+exports['Az-Framework']:depositMoney(src, amount)
+exports['Az-Framework']:withdrawMoney(src, amount)
+exports['Az-Framework']:transferMoney(src, targetSrc, amount)
+
+exports['Az-Framework']:GetMoney(discordID, charID, function(cash, bank) end)
+exports['Az-Framework']:UpdateMoney(discordID, charID, newCash, function(ok) end)
+
+local money = exports['Az-Framework']:GetPlayerMoney(src)
+exports['Az-Framework']:sendMoneyToClient(src)
+exports['Az-Framework']:claimDailyReward(src)
+```
+
+### :busts_in_silhouette: Identity / Admin / Character
+```lua
+local job = exports['Az-Framework']:getPlayerJob(src)
+local discordId = exports['Az-Framework']:getDiscordID(src)
+
+exports['Az-Framework']:isAdmin(src)
+exports['Az-Framework']:logAdminCommand(src, commandName, extraInfo)
+
+local char = exports['Az-Framework']:GetPlayerCharacter(src)
+local name = exports['Az-Framework']:GetPlayerCharacterName(src)
+```
+
+### :car: Parking / Vehicle Helpers
+```lua
+exports['Az-Framework']:RegisterParkedWorldVehicle(discordID, netId, plate)
+exports['Az-Framework']:UnregisterParkedWorldVehicle(netId)
+exports['Az-Framework']:GetParkingDiscordId(src)
+
+exports['Az-Framework']:GetPlayerParkedVehicles(discordID, function(rows) end)
+exports['Az-Framework']:GetParkedVehicleByPlate(discordID, plate, function(row) end)
+exports['Az-Framework']:IsVehicleParked(discordID, plate, function(isParked) end)
+```
+
+### :sparkles: Client Helpers
+```lua
+exports['Az-Framework']:refreshHUD()
+exports['Az-Framework']:updateHUD()
+```
+
+### :speech_balloon: Discord Presence (Optional)
+```lua
+exports['Az-Framework']:RefreshDiscordPresence()
+exports['Az-Framework']:SetDiscordPresenceOverride(text)
+exports['Az-Framework']:SetDiscordJob(jobLabel)
+```
 
 </details>
 
 ---
 
 ## 🙌 Contributing
+- GitHub Org: https://github.com/Azure-Framework  
+- Discord: https://discord.com/invite/tBg2U6CTHE  
 
-We welcome PRs and feedback! Submit improvements, report bugs, or suggest new modules.
+<sub>Last Updated: Jan 14, 2026</sub>
 
-- GitHub: https://github.com/Azure-Framework  
-- Community: https://discord.gg/tBg2U6CTHE
-
----
-
-<sub>Made with 💙 by Azure Framework | v2.4.2 – Last Updated: June 28, 2025</sub>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FFFFFF,100:007BFF&height=120&section=footer&animation=fadeIn" />
+</p>
