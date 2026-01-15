@@ -22,9 +22,6 @@
   <img alt="fivem" src="https://img.shields.io/badge/FIVEM-READY-007BFF?style=for-the-badge&labelColor=FFFFFF" />
 </p>
 
-> **Yes — these sections can be auto-collapsed.**  
-> Remove the `open` attribute from `<details>` to have them collapsed by default.
-
 ---
 
 ## :rocket: AZURE FRAMEWORK
