@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://impimg.com/images/Stoic-2026-02-16_03-58-23-699295dfec8700.70616300.png" width="140" height="140" />
+  <img src="https://impimg.com/images/Stoic-2026-02-16_03-58-23-699295dfec8700.70616300.png" width="240" height="140" />
 </p>
 
 <h1 align="center">Azure Framework</h1>
