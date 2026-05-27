@@ -1,43 +1,55 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A84FF,100:EAF4FF&height=190&section=header&text=AZURE%20FRAMEWORK&fontSize=62&fontColor=FFFFFF&fontAlignY=35&animation=fadeIn&desc=AZ-FRAMEWORK%202.0%20FOR%20FIVEM&descAlignY=60&descSize=18&descColor=EAF3FF" alt="Azure Framework" />
+  <img src="https://avatars.githubusercontent.com/u/210116470?v=4" width="132" alt="Azure Framework logo" />
 </p>
 
-<h1 align="center">Az-Framework</h1>
+<h1 align="center">Azure Framework</h1>
 
 <p align="center">
-  <b>Modular FiveM framework, compatibility bridges, resource packs, and txAdmin deployment for production roleplay servers.</b>
+  <b>Az-Framework 2.0 for FiveM servers that need a modern core, compatibility bridges, resource packs, and clean deployment.</b>
 </p>
 
 <p align="center">
-  <a href="https://madebyazure.com/framework/"><img alt="Docs" src="https://img.shields.io/badge/Docs-madebyazure.com-0A84FF?style=for-the-badge" /></a>
-  <a href="https://github.com/Azure-Framework/txRecipe"><img alt="txAdmin" src="https://img.shields.io/badge/txAdmin-Recipe-111827?style=for-the-badge" /></a>
+  <a href="https://madebyazure.com/framework/"><img alt="Docs" src="https://img.shields.io/badge/Docs-madebyazure.com-1D9BF0?style=for-the-badge" /></a>
+  <a href="https://github.com/Azure-Framework/txRecipe"><img alt="txAdmin Recipe" src="https://img.shields.io/badge/txAdmin-Recipe-0F172A?style=for-the-badge" /></a>
   <a href="https://discord.gg/tBg2U6CTHE"><img alt="Discord" src="https://img.shields.io/badge/Discord-Support-5865F2?style=for-the-badge" /></a>
-  <a href="https://github.com/Azure-Framework/Az-Framework"><img alt="Framework" src="https://img.shields.io/badge/Az--Framework-2.0-0A84FF?style=for-the-badge" /></a>
+  <a href="https://github.com/Azure-Framework/Az-Framework"><img alt="Az-Framework" src="https://img.shields.io/badge/Framework-2.0-1D9BF0?style=for-the-badge" /></a>
 </p>
 
 ---
 
-## What Is Az-Framework?
+## Az-Framework 2.0
 
-Az-Framework is a FiveM framework ecosystem built around a central `Az-Framework` core, modular gameplay resources, compatibility bridges, and a public txAdmin recipe.
+Azure Framework is a modular FiveM ecosystem built around the `Az-Framework` core. It gives servers a central player, character, money, job, inventory bridge, admin, department, and export layer while still supporting resources made for QBCore, qb-inventory, qb-target, ESX, ND_Core, ox, and vMenu-style stacks.
 
-It is designed for servers that want Az-native systems without throwing away every resource written for QBCore, qb-inventory, qb-target, ESX, ND_Core, ox, or vMenu-style stacks.
+Use it as a full framework, a hybrid vMenu/framework stack, or a compatibility base while moving older resources into Az-native logic.
 
-## Why Use It?
+## Why Servers Use Az
 
-- Central player, character, money, job, metadata, department, admin, HUD, and bridge export layer.
-- Modular resources that can be installed as a full stack or added one at a time.
-- Bridge repos for legacy resource compatibility.
-- Summer 2.0 resource pack with legal and illegal seasonal activities.
-- txAdmin recipe for faster clean installs.
+- One central framework resource instead of scattered standalone systems.
+- Bridge exports for QBCore, qb-inventory, qb-target, ESX, and ND_Core compatibility.
+- Built-in modules for character flow, admin tools, banking, jobs, departments, HUD, death, DMV, fuel, housing, insurance, and more.
+- Summer 2.0 activity pack with legal jobs, illegal contracts, routing, rewards, cooldowns, validation, and dispatch hooks.
+- txAdmin recipe for fast fresh installs.
 - Public docs and Discord support.
 
 ---
 
 <details open>
-<summary><b>Quick Install</b></summary>
+<summary><b>Start Here</b></summary>
 
-Use the txAdmin recipe when starting fresh:
+Docs:
+
+```text
+https://madebyazure.com/framework/
+```
+
+Discord:
+
+```text
+https://discord.gg/tBg2U6CTHE
+```
+
+Fresh install:
 
 ```text
 https://github.com/Azure-Framework/txRecipe
@@ -52,26 +64,26 @@ ensure ox_target
 ensure Az-Framework
 ```
 
-Start inventory, target, bridge, MDT, job, and gameplay resources after `Az-Framework`.
+Start inventory, targeting, bridges, MDT, jobs, and gameplay resources after `Az-Framework`.
 
 </details>
 
 <details>
-<summary><b>Important Bridge Rename Instructions</b></summary>
+<summary><b>Bridge Rename Instructions</b></summary>
 
-The bridge repositories are published with Az-branded repo names, but the runtime folders must be renamed to the framework names that legacy resources expect.
+The bridge repos are Az-branded on GitHub, but the folders must use the original framework resource names at runtime. Many legacy resources check `GetResourceState()` or exports by exact resource name.
 
-If you download or clone a bridge manually, rename the folder before starting it:
+If you download bridges manually, rename them before starting the server:
 
-| GitHub repository | Required runtime folder name | Use when a resource expects |
+| GitHub repository | Required folder name | Why |
 | --- | --- | --- |
-| `Az-QBCore-Bridge` | `qb-core` | `exports['qb-core']:GetCoreObject()` |
-| `Az-QBInventory-Bridge` | `qb-inventory` | qb-inventory events/exports |
-| `Az-QBTarget-Bridge` | `qb-target` | qb-target exports |
-| `Az-ESX-Bridge` | `es_extended` | ESX Legacy APIs |
-| `Az-NDCore-Bridge` | `ND_Core` | ND_Core APIs |
+| `Az-QBCore-Bridge` | `qb-core` | Resources call `exports['qb-core']:GetCoreObject()` |
+| `Az-QBInventory-Bridge` | `qb-inventory` | Resources expect qb-inventory events/exports |
+| `Az-QBTarget-Bridge` | `qb-target` | Resources expect qb-target exports |
+| `Az-ESX-Bridge` | `es_extended` | Resources expect ESX Legacy APIs |
+| `Az-NDCore-Bridge` | `ND_Core` | Resources expect ND_Core APIs |
 
-Correct start order:
+Correct bridge start order:
 
 ```cfg
 ensure Az-Framework
@@ -82,14 +94,14 @@ ensure es_extended
 ensure ND_Core
 ```
 
-Do not start the folders as `Az-QBCore-Bridge`, `Az-QBInventory-Bridge`, `Az-QBTarget-Bridge`, `Az-ESX-Bridge`, or `Az-NDCore-Bridge`; most compatibility resources check the original framework resource name.
+The txAdmin recipe already downloads the bridge repos and renames/moves them into the correct runtime folder names.
 
 </details>
 
 <details>
-<summary><b>2.0 Resource Groups</b></summary>
+<summary><b>Resource Groups</b></summary>
 
-Core framework:
+Core:
 
 - `Az-Framework`
 - `txRecipe`
@@ -102,7 +114,7 @@ Compatibility bridges:
 - `Az-ESX-Bridge`
 - `Az-NDCore-Bridge`
 
-Summer 2.0 pack:
+Summer 2.0:
 
 - `Az-Summer2Core`
 - `Az-Lifeguard`
@@ -154,17 +166,13 @@ Jobs, economy, and gameplay:
 </details>
 
 <details>
-<summary><b>Framework Exports</b></summary>
-
-Use Az exports when building or converting resources:
+<summary><b>Common Az Exports</b></summary>
 
 ```lua
 local Az = exports['Az-Framework']:GetObject()
 local player = exports['Az-Framework']:GetPlayer(source)
 local snapshot = exports['Az-Framework']:GetBridgePlayerSnapshot(source)
 ```
-
-Common server exports include:
 
 ```lua
 exports['Az-Framework']:GetPlayer(source)
@@ -190,7 +198,3 @@ exports['Az-Framework']:BridgeNotify(source, message, type, duration)
 - Discord: https://discord.gg/tBg2U6CTHE
 - Core repo: https://github.com/Azure-Framework/Az-Framework
 - txAdmin recipe: https://github.com/Azure-Framework/txRecipe
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:EAF4FF,100:0A84FF&height=120&section=footer&animation=fadeIn" alt="" />
-</p>
