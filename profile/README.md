@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/210116470?v=4" width="132" alt="Azure Framework logo" />
+  <img src="./assets/hero.png" alt="Azure Framework" />
 </p>
 
 <h1 align="center">Azure Framework</h1>
@@ -16,6 +16,10 @@
 </p>
 
 ---
+
+<p align="center">
+  <img src="./assets/start-here.png" alt="Start Here" />
+</p>
 
 ## Az-Framework 2.0
 
@@ -68,6 +72,10 @@ Start inventory, targeting, bridges, MDT, jobs, and gameplay resources after `Az
 
 </details>
 
+<p align="center">
+  <img src="./assets/bridges.png" alt="Compatibility Bridges" />
+</p>
+
 <details>
 <summary><b>Bridge Rename Instructions</b></summary>
 
@@ -97,6 +105,10 @@ ensure ND_Core
 The txAdmin recipe already downloads the bridge repos and renames/moves them into the correct runtime folder names.
 
 </details>
+
+<p align="center">
+  <img src="./assets/resources.png" alt="Resource Groups" />
+</p>
 
 <details>
 <summary><b>Resource Groups</b></summary>
@@ -165,6 +177,10 @@ Jobs, economy, and gameplay:
 
 </details>
 
+<p align="center">
+  <img src="./assets/exports.png" alt="Framework Exports" />
+</p>
+
 <details>
 <summary><b>Common Az Exports</b></summary>
 
@@ -191,6 +207,10 @@ exports['Az-Framework']:BridgeNotify(source, message, type, duration)
 </details>
 
 ---
+
+<p align="center">
+  <img src="./assets/support.png" alt="Docs and Support" />
+</p>
 
 ## Links
 
