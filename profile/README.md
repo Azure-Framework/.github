@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/hero.png" alt="Azure Framework" />
+  <img src="./assets/cover-v2.png" alt="Azure Framework" />
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 ---
 
 <p align="center">
-  <img src="./assets/start-here.png" alt="Start Here" />
+  <img src="./assets/start-v2.png" alt="Start Here" />
 </p>
 
 ## Az-Framework 2.0
@@ -67,7 +67,7 @@ Start inventory, targeting, bridges, MDT, jobs, and gameplay resources after `Az
 </details>
 
 <p align="center">
-  <img src="./assets/bridges.png" alt="Compatibility Bridges" />
+  <img src="./assets/bridges-v2.png" alt="Compatibility Bridges" />
 </p>
 
 <details>
@@ -101,7 +101,7 @@ The txAdmin recipe already downloads the bridge repos and renames/moves them int
 </details>
 
 <p align="center">
-  <img src="./assets/resources.png" alt="Resource Groups" />
+  <img src="./assets/resources-v2.png" alt="Resource Groups" />
 </p>
 
 <details>
@@ -172,7 +172,7 @@ Jobs, economy, and gameplay:
 </details>
 
 <p align="center">
-  <img src="./assets/exports.png" alt="Framework Exports" />
+  <img src="./assets/exports-v2.png" alt="Framework Exports" />
 </p>
 
 <details>
@@ -203,7 +203,7 @@ exports['Az-Framework']:BridgeNotify(source, message, type, duration)
 ---
 
 <p align="center">
-  <img src="./assets/support.png" alt="Docs and Support" />
+  <img src="./assets/support-v2.png" alt="Docs and Support" />
 </p>
 
 ## Links
