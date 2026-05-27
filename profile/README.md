@@ -2,12 +2,6 @@
   <img src="./assets/hero.png" alt="Azure Framework" />
 </p>
 
-<h1 align="center">Azure Framework</h1>
-
-<p align="center">
-  <b>Az-Framework 2.0 for FiveM servers that need a modern core, compatibility bridges, resource packs, and clean deployment.</b>
-</p>
-
 <p align="center">
   <a href="https://madebyazure.com/framework/"><img alt="Docs" src="https://img.shields.io/badge/Docs-madebyazure.com-1D9BF0?style=for-the-badge" /></a>
   <a href="https://github.com/Azure-Framework/txRecipe"><img alt="txAdmin Recipe" src="https://img.shields.io/badge/txAdmin-Recipe-0F172A?style=for-the-badge" /></a>
